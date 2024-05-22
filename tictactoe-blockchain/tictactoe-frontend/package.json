@@ -1,0 +1,43 @@
+{
+  "name": "tictactoe-frontend",
+  "version": "1.0.0",
+  "description": "A React application for a blockchain-based Tic Tac Toe game",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.13",
+    "ethers": "^5.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^3.0.1",
+    "source-map-loader": "^5.0.0",
+    "web3": "^4.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.24.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
