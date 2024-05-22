@@ -1,72 +1,55 @@
-/* Overall styles for the App component */
-.App {
+body {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
   }
   
-  /* Styles for the Tic Tac Toe board */
+  .App {
+    text-align: center;
+  }
+  
   .tic-tac-toe-board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
     grid-gap: 10px;
-    border: 2px solid #333;
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 10px;
+    justify-content: center;
+    margin-top: 20px;
   }
   
-  /* Styles for individual cells */
   .cell {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3rem;
-    border: 2px solid #333;
-    background-color: #fff;
+    font-size: 36px;
+    font-weight: bold;
+    color: #000; /* Change color to black */
+    border: 2px solid #ccc;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
   .cell:hover {
-    background-color: #ccc;
+    background-color: #e0e0e0;
   }
   
-  /* Styles for cells with 'X' or 'O' marks */
-  .cell.X {
-    color: #f00; /* Red color for 'X' */
+  .cell:disabled {
+    cursor: not-allowed;
+    background-color: #fff;
   }
   
-  .cell.O {
-    color: #00f; /* Blue color for 'O' */
-  }
-  
-  /* Styles for the current player text */
-  p {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  /* Style for the winner message */
-  h1 {
-    font-size: 2rem;
+  button {
     margin-top: 20px;
-    text-align: center;
-    color: #333;
-  }
-  
-/* Style for the reset button */
-button {
-    background-color: #333;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
     color: #fff;
-    font-size: 1rem;
-    padding: 8px 16px; /* Adjust padding to make the button smaller */
-    margin-top: 10px; /* Add margin-top to lower the button */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -74,6 +57,15 @@ button {
   }
   
   button:hover {
-    background-color: #555;
+    background-color: #0056b3;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 5px 0;
   }
   

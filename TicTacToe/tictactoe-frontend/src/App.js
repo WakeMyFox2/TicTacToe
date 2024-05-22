@@ -4,7 +4,7 @@ import { provider, contract, getAccounts, getBalance } from './eth';
 
 const Cell = ({ value, onClick, disabled }) => {
   return (
-    <div className="cell" onClick={onClick} disabled={disabled}>
+    <div className="cell" onClick={onClick} style={{ pointerEvents: disabled ? 'none' : 'auto' }}>
       {value}
     </div>
   );
