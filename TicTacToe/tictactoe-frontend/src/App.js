@@ -2,13 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 import { provider, contract, getAccounts, getBalance } from './eth';
 
-const Cell = ({ value, onClick, disabled }) => {
-  return (
-    <div className="cell" onClick={onClick} style={{ pointerEvents: disabled ? 'none' : 'auto' }}>
-      {value}
-    </div>
-  );
-};
+const Cell = ({ value, onClick, disabled }) => (
+  <button className="cell" onClick={onClick} disabled={disabled}>
+    {value}
+  </button>
+);
 
 function App() {
   const [board, setBoard] = useState(Array(9).fill(null));
@@ -34,11 +32,6 @@ function App() {
         setBalances(balances);
 
         setAccount(accounts[0]);
-
-        const contractBoard = await fetchBoard();
-        setBoard(contractBoard);
-        const currentPlayer = await contract.currentPlayer();
-        setCurrentPlayer(currentPlayer === accounts[0] ? 'X' : 'O');
       } catch (error) {
         console.error('Error connecting to Ethereum network:', error);
       }
@@ -47,17 +40,6 @@ function App() {
     initialize();
   }, []);
 
-  const fetchBoard = async () => {
-    const boardData = [];
-    for (let i = 0; i < 3; i++) {
-      for (let j = 0; j < 3; j++) {
-        const cell = await contract.board(i, j);
-        boardData.push(cell.toNumber() === 1 ? 'X' : cell.toNumber() === 2 ? 'O' : null);
-      }
-    }
-    return boardData;
-  };
-
   const handleCellClick = async (cellIndex) => {
     if (gameOver || board[cellIndex]) return;
 
@@ -65,25 +47,24 @@ function App() {
     newBoard[cellIndex] = currentPlayer;
     setBoard(newBoard);
 
-    const row = Math.floor(cellIndex / 3);
-    const col = cellIndex % 3;
-
     try {
+      const row = Math.floor(cellIndex / 3);
+      const col = cellIndex % 3;
       const tx = await contract.makeMove(row, col);
       await tx.wait();
-
-      const winningPlayer = checkWinner(newBoard);
-      if (winningPlayer) {
-        setWinner(winningPlayer);
-        setGameOver(true);
-      } else if (isBoardFull(newBoard)) {
-        setWinner('Draw');
-        setGameOver(true);
-      } else {
-        setCurrentPlayer(currentPlayer === 'X' ? 'O' : 'X');
-      }
     } catch (error) {
       console.error('Error making move:', error);
+    }
+
+    const winningPlayer = checkWinner(newBoard);
+    if (winningPlayer) {
+      setWinner(winningPlayer);
+      setGameOver(true);
+    } else if (isBoardFull(newBoard)) {
+      setWinner('Draw');
+      setGameOver(true);
+    } else {
+      setCurrentPlayer(currentPlayer === 'X' ? 'O' : 'X');
     }
   };
 

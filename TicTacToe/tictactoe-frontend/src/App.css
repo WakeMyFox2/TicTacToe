@@ -1,78 +1,79 @@
 /* Overall styles for the App component */
 .App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-}
-
-/* Styles for the Tic Tac Toe board */
-.tic-tac-toe-board {
-  display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
-  grid-gap: 10px;
-  border: 2px solid #333;
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-/* Styles for individual cells */
-.cell {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3rem;
-  border: 2px solid #333;
-  background-color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.cell:hover {
-  background-color: #ccc;
-}
-
-/* Styles for cells with 'X' or 'O' marks */
-.cell.X {
-  color: #f00; /* Red color for 'X' */
-}
-
-.cell.O {
-  color: #00f; /* Blue color for 'O' */
-}
-
-/* Styles for the current player text */
-p {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-/* Style for the winner message */
-h1 {
-  font-size: 2rem;
-  margin-top: 20px;
-  text-align: center;
-  color: #333;
-}
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Styles for the Tic Tac Toe board */
+  .tic-tac-toe-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    grid-gap: 10px;
+    border: 2px solid #333;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Styles for individual cells */
+  .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    border: 2px solid #333;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cell:hover {
+    background-color: #ccc;
+  }
+  
+  /* Styles for cells with 'X' or 'O' marks */
+  .cell.X {
+    color: #f00; /* Red color for 'X' */
+  }
+  
+  .cell.O {
+    color: #00f; /* Blue color for 'O' */
+  }
+  
+  /* Styles for the current player text */
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Style for the winner message */
+  h1 {
+    font-size: 2rem;
+    margin-top: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
 /* Style for the reset button */
 button {
-  background-color: #333;
-  color: #fff;
-  font-size: 1rem;
-  padding: 8px 16px; /* Adjust padding to make the button smaller */
-  margin-top: 10px; /* Add margin-top to lower the button */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #555;
-}
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+    padding: 8px 16px; /* Adjust padding to make the button smaller */
+    margin-top: 10px; /* Add margin-top to lower the button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+  

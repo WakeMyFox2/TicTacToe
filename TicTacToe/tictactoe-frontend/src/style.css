@@ -1,71 +1,96 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-  }
-  
-  .App {
-    text-align: center;
-  }
-  
-  .tic-tac-toe-board {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-gap: 10px;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .cell {
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 36px;
-    font-weight: bold;
-    color: #000; /* Change color to black */
-    border: 2px solid #ccc;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .cell:hover {
-    background-color: #e0e0e0;
-  }
-  
-  .cell:disabled {
-    cursor: not-allowed;
-    background-color: #fff;
-  }
-  
-  button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  li {
-    margin: 5px 0;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+}
+
+.App {
+  text-align: center;
+}
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.connection-status {
+  font-size: 16px;
+}
+
+.balance {
+  font-size: 16px;
+}
+
+.connected {
+  color: #28a745;
+}
+
+.disconnected {
+  color: #dc3545;
+}
+
+.tic-tac-toe-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  font-weight: bold;
+  color: #000; /* Change color to black */
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+  background-color: #e0e0e0;
+}
+
+.cell:disabled {
+  cursor: not-allowed;
+  background-color: #fff;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+}
