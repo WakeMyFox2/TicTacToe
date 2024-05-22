@@ -2,7 +2,7 @@
   "name": "tictactoe-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wakemyfox2.github.io/TicTacToe",
+  "homepage": "https://664e62f82fe4df40a0d9c259--tictactoeiy.netlify.app/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
